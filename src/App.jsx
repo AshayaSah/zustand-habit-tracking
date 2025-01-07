@@ -1,12 +1,16 @@
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddHabitForm from "./components/AddHabitForm";
 import HabitList from "./components/HabitList";
+import LandingPage from "./components/LandingPage";
+import FormPage from "./components/FormPage";
 
 const App = () => {
   return (
     <>
-      <Container>
+      {/* Habit Tracker Part  */}
+      {/* <Container>
         <Box>
           <Typography variant="h2" align="center">
             Habit Tracker
@@ -14,7 +18,15 @@ const App = () => {
           <AddHabitForm></AddHabitForm>
           <HabitList></HabitList>
         </Box>
-      </Container>
+      </Container> */}
+
+      {/* Zustand Capabilities  */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/form" element={<FormPage />} />
+        </Routes>
+      </Router>
     </>
   );
 };
